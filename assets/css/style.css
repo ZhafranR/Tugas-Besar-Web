@@ -28,7 +28,7 @@
 
 .header .navigation li {
   float: right;
-  margin-left: 30px;
+  margin-left: 27px;
   font-size: 18px;
   display: block;
 }
@@ -76,6 +76,8 @@
 .parent {
   background-color: #b5daf7;
   border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 #buttonSubs {
@@ -88,4 +90,48 @@
   display: inline-block;
   font-size: 16px;
   border-radius: 10px;
+}
+
+.rekomendasi p {
+  margin: auto;
+  text-align: center;
+}
+
+.rekomendasi h3 {
+  margin: auto;
+  text-align: center;
+}
+
+.rekomendasiKelas {
+  display: flex;
+}
+
+.kelas {
+  border-radius: 10px;
+  border: solid 1px #b5daf7;
+  margin: auto;
+}
+
+.kelas img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.kelas p {
+  text-align: start;
+  padding-left: 10px;
+  font-weight: 500;
+}
+
+.kelas button {
+  margin: 10px;
+  background-color: #b5daf6;
+  border-radius: 5px;
+  color: #040405;
+  border: none;
+  padding: 5px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
