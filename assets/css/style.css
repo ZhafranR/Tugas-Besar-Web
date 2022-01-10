@@ -1,6 +1,7 @@
 * {
-  font-family: "Poppins";
+  font-family: 'Poppins', sans-serif;
 }
+
 
 .container {
   width: 90%;
@@ -43,7 +44,7 @@
   color: #b6b6b6;
 }
 
-.buttonSignUp button {
+#buttonSignUp{
   background-color: #ff7048;
   border: none;
   color: white;
@@ -53,6 +54,11 @@
   display: inline-block;
   font-size: 16px;
   border-radius: 10px;
+}
+
+#buttonSignUp:hover{
+  background-color: #fd9f85;
+  color: rgb(255, 85, 85);
 }
 
 .home {
@@ -76,8 +82,8 @@
 .parent {
   background-color: #b5daf7;
   border-radius: 20px;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 40px;
+  padding-bottom: 30px;
 }
 
 #buttonSubs {
@@ -88,8 +94,14 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-weight: 600;
   font-size: 16px;
   border-radius: 10px;
+}
+
+#buttonSubs:hover{
+  background-color: #6d8dcc;
+  color: #22365e;
 }
 
 .rekomendasi p {
@@ -255,7 +267,6 @@
 
 * {
   box-sizing: border-radius;
-  font-family: 'Rubik', sans-serif;
 }
 .container-bottom-inside {
   border: 1px solid black;
