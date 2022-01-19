@@ -36,7 +36,14 @@ body {
 }
 
 #aSubmit{
- padding-right: 85px;
+  padding-right: 85px;
+  color: white;
+  text-decoration: none;
+  font-family: "Poppins";
+}
+
+#bSubmit{
+  padding-right: 120px;
   color: white;
   text-decoration: none;
   font-family: "Poppins";
