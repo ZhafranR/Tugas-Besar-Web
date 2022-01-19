@@ -35,6 +35,13 @@ body {
   color: #233863;
 }
 
+#aSubmit{
+ padding-right: 85px;
+  color: white;
+  text-decoration: none;
+  font-family: "Poppins";
+}
+
 .form {
   display: flex;
   flex-direction: column;
