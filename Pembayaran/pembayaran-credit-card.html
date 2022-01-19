@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    font-family: sans-serif;
+    background-color: #b5daf7; 
+}
+
+/* .container-box {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Grid-1"
+    "Grid-2";
+}
+
+.Grid-1 { grid-area: Grid-1; }
+
+.Grid-2 { grid-area: Grid-2; } */
+
+
+.container {
+    width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .card {
+    position: relative;
+    border-radius: 10px;
+}
+
+.container .card .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.7s; 
+    z-index: 1;
+    /* max-width: 64px;
+    max-height: 64px; */
+}
+
+.img-ratio {
+    max-height: 64px;
+    max-width: 64px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .card:nth-child(1) .icon {
+    background: #bdfdcb;
+}
+
+.container .card:nth-child(2) .icon {
+    background: #bdecfd;
+}
+
+.container .card:nth-child(3) .icon {
+    background: #fdc9bd;
+}
+
+
+.container .card .icon .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+}
+
+i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.container .card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.container .card .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+    background: #ff0057;
+    transform: translateY(0px);
+}
+
+.container .card .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.container .card .face.face1 .content i{
+    max-width: 100px;
+}
+
+.container .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+
+.container .card .face.face2 .content h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+} 
+
+.container a p{
+    text-decoration: none;
+    color: #414141;
+}
+
+.button {
+  background-color: #ff7048;
+  border: 1px solid #ff7048;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+  position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button:hover {
+  background-color: #ff7048;
+}
+
+.button:focus {
+  border-color: #b5daf7;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 2;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cards Hover2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="credit-cards.png" alt="" class="img-ratio">
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <h3>
+                        <p>Credit-Card</p>
+                    </h3>
+                    <br>
+                    <p>1. Lorem Ipsum Dolor Sit Amet</p>
+                    <p>2. Lorem Ipsum Dolor Sit Amet</p>
+                    <p>3. Lorem Ipsum Dolor Sit Amet</p>
+                    <p>4. Lorem Ipsum Dolor Sit Amet</p>
+                    <p>5. Lorem Ipsum Dolor Sit Amet</p>
+                    <p>6. Lorem Ipsum Dolor Sit Amet</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="dollar.png" alt="" class="img-ratio">
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <h3>
+                        <p>Total Pembayaran</p>
+                    </h3>
+                    <br>
+                    <p>Rp 1,000,000</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="barcode.png" alt="" class='img-ratio'>
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <h3>
+                        <p>Kode Pembayaran</p>
+                    </h3>
+                    <br>
+                    <p>>>> ABCDXX123456 <<<</p>
+                    <p>Bayar Sebelum: 06/01/2022 23.61</p>
+                    <br><br>
+                    <button class='button' role="button">Selesai</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+</body>
+</html>

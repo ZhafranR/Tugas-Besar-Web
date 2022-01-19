@@ -1,0 +1,136 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+* {
+    font-family: 'Poppins', sans-serif;
+  }
+.container {
+    width: 90%;
+    margin: auto;
+  }
+  /* navbar */
+  
+.topnav {
+    overflow: hidden;
+  }
+  
+.topnav a {
+    float: left;
+    color: black;
+  
+    display: block;
+    text-align: center;
+    padding: 14px 0;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+.topnav a.active {
+    background-color: #04aa6d;
+    color: white;
+  }
+  
+.topnav .icon {
+    display: none;
+  }
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+.navbar a.navbar-title {
+    font-weight: 700;
+    font-size: 30px;
+  }
+  
+.navbar a.btn.btn-navbar {
+    background-color: #ff7048;
+    border: 1px solid #ff7048;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+  
+.navbar a.btn.btn-navbar:hover {
+    background-color: #c74927;
+    border-color: #c74927;
+    color: white;
+  }
+.home {
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  
+.headerTxt {
+    align-items: center
+  }
+  
+.home .headerTxt h1 {
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3ch;
+    line-height: 52px;
+    color: #233863;
+
+  }
+
+.parent {
+    background-color: #b5daf7;
+    border-radius: 20px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+  
+.button-back {
+    display: grid;
+    background: #233863;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin-left: 300px;
+    margin-right: 300px;
+    color: white;
+}
+
+.img-loading img{
+    display: grid;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    
+
+}
+.desc p{
+    align-items: center;
+    display: grid;
+    grid-area: desc;
+    font-style: normal;
+    font-weight: bold;
+    color: #233863;
+    font-size: 18px;
+    line-height: 42px;
+    padding-left: 10px ;
+    padding-right: 10px;
+}
