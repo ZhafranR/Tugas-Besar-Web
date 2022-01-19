@@ -54,9 +54,17 @@ body {
   }
 }
 
-.navbar-title {
-  font-weight: 700;
-  font-size: 30px;
+.logo {
+  margin-top: 10px;
+}
+
+.logo img {
+  width: 204px;
+  height: 45px;
+}
+
+.navbarBaru{
+  display: flex;
 }
 
 .navbar a.btn.btn-navbar {
@@ -66,6 +74,8 @@ body {
   border-radius: 12px;
   color: white;
   font-weight: 500;
+  float: right;
+  margin-left: 800px;
 }
 
 .navbar a.btn.btn-navbar:hover {
