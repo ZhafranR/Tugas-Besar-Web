@@ -1,3 +1,27 @@
+<?php
+require 'func_signup.php';
+
+//cek apakah tombol submit sudah ditekan atau belum
+if (isset($_POST["submit"])) {
+
+    if (signup($_POST) > 0) {
+        echo "
+        <script>
+            alert('Kamu berhasil membuat akun!');
+            document.location.href = 'afterSignup.php';
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+            alert('Kamu gagal membuat akun!');
+            document.location.href = 'index.php';
+        </script>
+        ";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,26 +61,27 @@
             </button>
             <p>-OR-</p>
             <div class="formPage">
-                <label for="">Nama</label>
-                <input type="text" id="nama">
-                <label for="">Email</label>
-                <input type="text" id="email">
-                <label for="">Password</label>
-                <input type="password" id="password">
-
+                <form action="" method="post">
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama" id="nama">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <div class="check">
+                        <input type="checkbox" id="checkbox" name="checkbox">
+                        <label for="checkbox">
+                            By creating an account, you’re <br />
+                            agreed to the Terms & Conditions <br />
+                            and Privacy Policies <br />
+                        </label>
+                    </div>
+                    <button id="buttonSubmit" type="submit" name="submit">
+                        Create Account
+                    </button>
+                </form>
             </div>
-            <div class="check">
-                <input type="checkbox" id="checkbox" name="checkbox">
-                <label for="checkbox">
-                    By creating an account, you’re <br />
-                    agreed to the Terms & Conditions <br />
-                    and Privacy Policies <br />
-                </label>
 
-            </div>
-            <button id="buttonSubmit" type="submit" name="submit">
-                <a id="aSubmit" href="afterSignup.html">Create Account</a>
-            </button>
             <div class="changeOption">
                 <p id="question">Already have an Account?</p>
                 <a href="login.html">Log In</a>
