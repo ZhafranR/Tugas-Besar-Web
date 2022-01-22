@@ -1,3 +1,9 @@
+<?php
+require "func_signup.php";
+$kelas = query("SELECT * FROM kelas");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,6 +47,8 @@
 
   <!-- end of navbar -->
 
+  <!-- Perlu ada page untuk ke arah setelah button ikuti kelas -->
+
   <!-- content -->
   <section class="section-daftar">
     <div class="container">
@@ -65,7 +73,7 @@
       <div class="row responsive-card  justify-content-center">
         <div class=" mx-auto mb-5">
           <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/ui_ux.jpg" class="card-img-top" alt="" />
+            <img src="assets/img/ui_ux.jpg" class="card-img-top" id="class1" alt="" />
             <div class="card-body">
               <h5 class="card-title">UI/UX Design</h5>
               <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
@@ -74,7 +82,7 @@
         </div>
         <div class=" mx-auto mb-5">
           <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/html.jpg" class="card-img-top" alt="" />
+            <img src="assets/img/html.jpg" class="card-img-top" id="class1" alt="" />
             <div class="card-body">
               <h5 class="card-title">HTML 5 Dasar</h5>
               <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
@@ -83,7 +91,7 @@
         </div>
         <div class=" mx-auto mb-5">
           <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/codeigniter.jpg" class="card-img-top" alt="" />
+            <img src="assets/img/codeigniter.jpg" class="card-img-top" id="class1" alt="" />
             <div class="card-body">
               <h5 class="card-title">Codeigniter PHP</h5>
               <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
@@ -92,27 +100,27 @@
         </div>
         <div class=" mx-auto mb-5">
           <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/ui_ux.jpg" class="card-img-top" alt="" />
+            <img src="assets/img/frontend.jpeg" class="card-img-top" id="class1" alt="" />
             <div class="card-body">
-              <h5 class="card-title">UI/UX Design</h5>
+              <h5 class="card-title">Front End Web Developer</h5>
               <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
             </div>
           </div>
         </div>
         <div class=" mx-auto mb-5">
           <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/html.jpg" class="card-img-top" alt="" />
+            <img src="assets/img/backend.jpeg" class="card-img-top" id="class1" alt="" />
             <div class="card-body">
-              <h5 class="card-title">HTML 5 Dasar</h5>
+              <h5 class="card-title">Back End Web Developer</h5>
               <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
             </div>
           </div>
         </div>
         <div class=" mx-auto mb-5">
           <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/codeigniter.jpg" class="card-img-top" alt="" />
+            <img src="assets/img/bootstrap.jpeg" class="card-img-top" id="class1" alt="" />
             <div class="card-body">
-              <h5 class="card-title">Codeigniter PHP</h5>
+              <h5 class="card-title">Bootstrap Framework</h5>
               <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
             </div>
           </div>

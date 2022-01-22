@@ -63,7 +63,7 @@ body {
   height: 45px;
 }
 
-.navbarBaru{
+.navbarBaru {
   display: flex;
 }
 
@@ -351,6 +351,10 @@ ul.breadcrumb li a:hover {
   padding: 15px;
 }
 
+#class1 {
+  border-radius: 10px;
+}
+
 .btn.custom-button {
   background-color: #b5daf6;
   border-color: #b5daf6;
@@ -384,6 +388,5 @@ ul.breadcrumb li a:hover {
   .responsive-card {
     grid-template-columns: repeat(3, 1fr);
     text-align: left;
-  
   }
 }
