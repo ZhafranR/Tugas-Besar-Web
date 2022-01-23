@@ -166,21 +166,16 @@ i {
   font-size: 16px;
   line-height: 29px;
   padding: 0 10px 0 11px;
-  position: relative;
-  text-align: center;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  vertical-align: middle;
-  width: 100px;
-  position: fixed;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  margin-left: 20px;
 }
 
 .button:hover {
-  background-color: #f19379;
+  background-color: #d36040;
+  border: 1px solid #d36040;
 }
 
 .button:focus {
@@ -275,17 +270,21 @@ i {
                     <p>>>> ABCDXX123456 <<<</p>
                     <p>Bayar Sebelum: 06/01/2022 23.61</p>
                     <br><br>
-                    <button class="button" id="kembaliBtn">
-                        <a href="../pembayaran-basic.php">Kembali</a>
-                    </button>
                 </div>
             </div>
         </div>
     </div>
     <div style="display: flex;">
-        <button class="button" id="selesaiBtn" >
-            <a href="../pembayaran-berhasil.php">Selesai</a>
-        </button>
+        <div>
+            <button class="button" id="kembaliBtn">
+                <a href="../pembayaran-basic.php">Kembali</a>
+            </button>
+        </div>
+        <div>
+            <button class="button" id="selesaiBtn" >
+                <a href="../pembayaran-berhasil.php">Selesai</a>
+            </button>
+        </div>
     </div>
 </body>
 
