@@ -2,6 +2,27 @@
 require "func_signup.php";
 $user = query("SELECT * FROM user");
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=db-zenius", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // echo "Connected successfully";
+} catch(PDOException $e) {
+    // echo "Connection failed: " . $e->getMessage();
+}
+$STH = $conn->query('SELECT * FROM user ORDER BY iduser DESC;');
+# setting the fetch mode
+$STH->setFetchMode(PDO::FETCH_ASSOC);
+$email = $STH->fetch()['email'];
+$password = $STH->fetch()['password'];
+$user_data[$email] = $password;
+$user_data_encode = json_encode($user_data);
+// var_dump($user_data);
+$conn=null;
 ?>
 
 
@@ -262,6 +283,14 @@ $user = query("SELECT * FROM user");
     </footer>
 
   </div>
+
+  <script>
+    var user_data = <?php echo $user_data_encode; ?>; // Success
+    console.log(user_data);
+    document.cookie=`${Object.keys(user_data)}-${Object.values(user_data)}`;
+    console.log(document.cookie);
+
+  </script>
 </body>
 
 </html>

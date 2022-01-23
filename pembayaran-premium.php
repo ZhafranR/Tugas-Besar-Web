@@ -281,7 +281,7 @@
             <a class="navbar-title" href="index.html"> RuangZenius </a>
             <ul class="navbar-nav ms-auto" style="float: right">
               <li class="nav-item">
-                <a class="nav-link btn btn-primary btn-navbar" href="index.html">Logout</a>
+                <a class="nav-link btn btn-primary btn-navbar" href="index.php">Logout</a>
               </li>
             </ul>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">

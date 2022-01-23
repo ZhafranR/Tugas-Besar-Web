@@ -65,9 +65,9 @@ if (isset($_POST["submit"])) {
                     <label for="nama">Nama</label>
                     <input type="text" name="nama" id="nama">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email-signup">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password-signup">
                     <div class="check">
                         <input type="checkbox" id="checkbox" name="checkbox">
                         <label for="checkbox">
@@ -88,6 +88,11 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
     </div>
+
+    <script>
+        // // var session = document.cookie;
+        // // console.log(session);
+    </script>
 </body>
 
 </html>
