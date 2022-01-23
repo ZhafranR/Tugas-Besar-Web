@@ -80,7 +80,7 @@ $kelas = query("SELECT * FROM kelas");
               <img src=<?php echo $foto; ?> class="card-img-top" id="class1" alt="" />
               <div class="card-body">
                 <h5 class="card-title"><?php echo $namaKelas; ?></h5>
-                <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
+                <a href="kelasBerhasil.php" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
               </div>
             </div>
           </div>
