@@ -44,10 +44,10 @@
     <div class="parent">
       <div class="home">
         <div class="headerTxt">
-          <h2>
-            Mau belajar <br>
+          <h1>
+            Mau belajar
             apa hari ini?
-          </h2>
+          </h1>
           <a href="daftarKelas.php" id="buttonSubs">MULAI BELAJAR</a>
         </div>
         <div class="hero">

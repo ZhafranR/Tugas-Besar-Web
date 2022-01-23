@@ -64,6 +64,7 @@
 .home {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .hero img {
@@ -72,8 +73,9 @@
 
 .headerTxt{
   margin-left: 80px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
+
 
 .parent {
   background-color: #b5daf7;
