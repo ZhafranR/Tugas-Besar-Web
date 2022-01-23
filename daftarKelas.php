@@ -70,62 +70,6 @@ $kelas = query("SELECT * FROM kelas");
         </div>
       </div>
       <div class="row responsive-card  justify-content-center">
-<<<<<<< HEAD
-        <div class=" mx-auto mb-5">
-          <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/ui_ux.jpg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">UI/UX Design</h5>
-              <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
-            </div>
-          </div>
-        </div>
-        <div class=" mx-auto mb-5">
-          <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/html.jpg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">HTML 5 Dasar</h5>
-              <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
-            </div>
-          </div>
-        </div>
-        <div class=" mx-auto mb-5">
-          <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/codeigniter.jpg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">Codeigniter PHP</h5>
-              <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
-            </div>
-          </div>
-        </div>
-        <div class=" mx-auto mb-5">
-          <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/frontend.jpeg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">Front End Web Developer</h5>
-              <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
-            </div>
-          </div>
-        </div>
-        <div class=" mx-auto mb-5">
-          <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/backend.jpeg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">Back End Web Developer</h5>
-              <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
-            </div>
-          </div>
-        </div>
-        <div class=" mx-auto mb-5">
-          <div class="card custom-card" style="width: 24rem">
-            <img src="assets/img/bootstrap.jpeg" class="card-img-top" alt="" />
-            <div class="card-body">
-              <h5 class="card-title">Bootstrap Framework</h5>
-              <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
-            </div>
-          </div>
-        </div>
-=======
         <?php foreach ($kelas as $row) : ?>
           <?php
           $namaKelas = $row["namaKelas"];
@@ -141,8 +85,6 @@ $kelas = query("SELECT * FROM kelas");
             </div>
           </div>
         <?php endforeach; ?>
-
->>>>>>> bebb4a1c9b0621a6db0136cd195019e93bdc47f3
       </div>
     </div>
   </section>
