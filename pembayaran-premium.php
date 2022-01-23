@@ -330,11 +330,11 @@
 
                         <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
                         <div class="custom-select" style="width:200px;">
-                          <select>
+                          <select id='option-pembayaran'>
                             <option value="0">Pilih:</option>
-                            <option value="1">Virtual Account</option>
-                            <option value="2">Ovo</option>
-                            <option value="3">Minimarket</option>
+                            <option value="VA">Virtual Account</option>
+                            <option value="OVO">Ovo</option>
+                            <option value="MiniMarket">Minimarket</option>
                           </select>
                         </div>
 
@@ -435,8 +435,10 @@
                         <h3 class="form-text">Tanggal Selesai</h3>
                         <p class="f-dateakhir" name="dateend">05/04/2022</p>
                       </div>
-                        <button class="button">Bayar</button>
-                </div>
+                      <button class="button">
+                          <a href="" id='bayar' onclick='pembayaran()'>Bayar</a>
+                      </button>              
+                  </div>
             </div>
         </div>
     </div>
@@ -450,6 +452,19 @@
             x.className = "topnav";
           }
         }
+
+        function pembayaran(){
+          var opsi_pembayaran = document.getElementById('option-pembayaran').value;
+          console.log(opsi_pembayaran);
+
+          if(opsi_pembayaran=='VA'){
+            document.getElementById('bayar').href='Pembayaran/pembayaran-credit-card.html';
+          } else if(opsi_pembayaran=='OVO'){
+            document.getElementById('bayar').href='Pembayaran/pembayaran-ovo.html';
+          } else{
+            document.getElementById('bayar').href='Pembayaran/pembayaran-minimarket.html';
+          }
+      }
       </script>
 </body>
 </html>
