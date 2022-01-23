@@ -422,7 +422,7 @@
                       </div> 
                       <div class="form-left">
                         <h3 class="form-text">Email Pengguna</h3>
-                        <p class="f-email" name="email">email@email.com</p>
+                        <p class="f-email" id='email-form' onclick='getCookie()' name="email"></p>
                         <h3 class="form-text">Nama Paket</h3>
                         <p class="f-paket" >Paket Basic</p>
                         <h3 class="form-text">Harga Paket</h3>
@@ -464,7 +464,20 @@
           } else{
             document.getElementById('bayar').href='Pembayaran/pembayaran-minimarket.html';
           }
-      }
+        }
+
+        function getCookie(){
+          var session = document.cookie;
+          const email = session.split('-')[0].split('=')[1];
+          const password = session.split('-')[1].split('=')[1];
+          console.log(email);
+          // document.getElementById('email-form').innerHTML.onload = function() {
+          //   'Tes'
+          // }
+
+          var email_form = document.getElementById('email-form').innerHTML = email;
+        }
+        getCookie();
       </script>
 </body>
 </html>

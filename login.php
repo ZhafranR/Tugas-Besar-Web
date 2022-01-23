@@ -119,11 +119,16 @@
                 // button_div = document.getElementById('buttonSubmit');
                 // newlink = document.createElement('a');
                 // newlink.setAttribute('href', '/afterLogin.php');
-                // button_div.appendChild(newlink);    
-
+                // button_div.appendChild(newlink);  
+                  
+                document.cookie=`${email_input}-${password_input}`;
                 document.getElementById("buttonSubmit").onclick = function(){
                     location.href = "afterLogin.php";
                 };
+
+                // var session = document.cookie;
+                // console.log(session);
+                
             } else if (is_email_valid && (is_password_valid==false)) {
                 alert("SALAH PASSWORD WEEE !!!");
             } else {
