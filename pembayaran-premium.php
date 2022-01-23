@@ -435,8 +435,7 @@
                             document.addEventListener("click", closeAllSelect);
                           </script>
 
-</body>
-                      </div> 
+</div> 
                       <div class="form-left">
                         <h3 class="form-text">Email Pengguna</h3>
                         <p class="f-email" name="email">email@email.com</p>

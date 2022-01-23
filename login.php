@@ -1,3 +1,39 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=db-zenius", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // echo "Connected successfully";
+    } catch(PDOException $e) {
+        // echo "Connection failed: " . $e->getMessage();
+    }
+
+    $STH = $conn->query('SELECT email, password from user');
+    # setting the fetch mode
+    $STH->setFetchMode(PDO::FETCH_ASSOC);
+
+    $email = array();
+    $password = array();
+    $user_data = array();
+
+    while($row = $STH->fetch()) {
+        $email = $row['email'];
+        $password = $row['password'];
+        // $data = array($email=>$password);
+
+        $user_data[$email] = $password;
+    }
+
+    $user_data_encode = json_encode($user_data);
+    // var_dump($user_data);
+    $conn=null;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +69,7 @@
             <p>-OR-</p>
             <div class="formPage">
                 <label for="">Email</label>
-                <input type="text" id="email">
+                <input type="email" id="email">
                 <label for="">Password</label>
                 <input type="password" id="password">
 
@@ -41,8 +77,9 @@
             <div class="forgotPass">
                 <a href="#">Forgot Password</a>
             </div>
-            <button id="buttonSubmit">
-                <a id="bSubmit" href="afterLogin.php">Log In</a>
+            <button id="buttonSubmit" onclick='dataChecking()'>
+                Log In
+                <!-- <a id="bSubmit" href="#">Log In</a> -->
             </button>
             <div class="changeOption">
                 <p id="question">Don't have an Account?</p>
@@ -50,6 +87,55 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // var user_data = <?php echo $user_data_encode; ?>; // Success
+        // console.log(user_data);
+
+        function dataChecking(){
+            var user_data = <?php echo $user_data_encode; ?>; // Success
+            var is_email_valid=true, is_password_valid=true;
+            var email_input, password_input;
+
+            email_input = document.getElementById('email').value;
+            password_input = document.getElementById('password').value;
+            
+            if(typeof user_data[email_input]=='undefined'){
+                is_email_valid=false;
+                is_password_valid=false;
+            }
+            else{
+                is_email_valid=true;
+                if(password_input==user_data[email_input]){
+                    is_password_valid=true;
+                }else{
+                    is_password_valid=false;
+                }
+            }
+            
+            if(is_email_valid && is_password_valid){
+                console.log('Masuk');
+
+                // button_div = document.getElementById('buttonSubmit');
+                // newlink = document.createElement('a');
+                // newlink.setAttribute('href', '/afterLogin.php');
+                // button_div.appendChild(newlink);    
+
+                document.getElementById("buttonSubmit").onclick = function(){
+                    location.href = "afterLogin.php";
+                };
+            } else if (is_email_valid && (is_password_valid==false)) {
+                alert("SALAH PASSWORD WEEE !!!");
+            } else {
+                alert("SALAH PASSWORD SAMA EMAIL WEEEE TOLONGGG !!!");
+            }
+
+            // console.log(is_email_valid);
+            // console.log(is_password_valid);
+        }
+
+
+    </script>
 </body>
 
 </html>
