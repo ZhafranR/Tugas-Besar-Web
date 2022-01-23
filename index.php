@@ -51,7 +51,7 @@
             Study With <br />
             Us, Cheaply
           </h1>
-          <p>Learning more easier with just one click.</p>
+          <p>Learning more easier with just one click</p>
           <a href="subs.php" id="buttonSubs">SUBSCRIPTION</a>
         </div>
         <div class="hero">
@@ -111,7 +111,7 @@
 
         <div class="text-container">
           <h3>Kelas Web Dasar </h3>
-          <h4>ZhafranR</h4>
+          <h4>Agus</h4>
           <div>
             Mentornya keren cara menyampaikan
             setiap materinya juga detail
@@ -131,7 +131,7 @@
 
         <div class="text-container">
           <h3>Kelas PHP Dasar</h3>
-          <h4>ZhafranR</h4>
+          <h4>Budi</h4>
           <div>
             Kelas paling recommended
             pokoknya buat investasi ilmu
@@ -151,7 +151,7 @@
 
         <div class="text-container">
           <h3>Kelas UI/UX Dasar</h3>
-          <h4>ZhafranR</h4>
+          <h4>Andi</h4>
           <div>
             Kelas yang sangat bermanfaat
             dan ilmu up-to-date dan yang

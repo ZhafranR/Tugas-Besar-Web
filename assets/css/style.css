@@ -14,6 +14,7 @@
 
 .header {
   display: flex;
+  justify-content: space-between;
 }
 
 .logo img {
@@ -23,7 +24,6 @@
 
 .header .navigation {
   float: right;
-  margin-left: 390px;
   margin-top: 20px;
 }
 
@@ -63,11 +63,14 @@
 
 .home {
   display: flex;
+  justify-content: space-between;
 }
 
 .hero img {
   float: right;
   margin-left: 100px;
+  width: 100%;
+  height: auto;
 }
 
 .headerTxt {
@@ -148,6 +151,18 @@
   display: inline-block;
 }
 
+.kelas button:hover {
+  margin: 10px;
+  background-color: #7d98ad;
+  border-radius: 5px;
+  color: #040405;
+  border: none;
+  padding: 5px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
 .reviewKelas {
   display: flex;
 }
@@ -215,12 +230,12 @@
 
 .text-container h3 {
   margin: 20px 0px 10px 0px;
-  color: #04bcff;
+  color: #9cd1fa;
   font-size: 18px;
 }
 .text-container h4 {
   margin: 20px 0px 10px 0px;
-  color: #04bcff;
+  color: #9cd1fa;
   font-size: 14px;
 }
 
@@ -269,7 +284,7 @@
   box-sizing: border-radius;
 }
 .container-bottom-inside {
-  border: 1px solid black;
+  border: 1px solid rgb(243, 239, 239);
   position: absolute;
   top: 0;
   right: 0;
@@ -278,8 +293,9 @@
   margin: auto;
   display: grid;
   place-items: center;
-  background-color: #128cfc;
+  background-color: #b5daf7;
 }
+
 .items {
   width: 300px;
   background: #fffffe;
@@ -296,7 +312,7 @@
 .items-head hr {
   width: 20%;
   margin: 0px 30px;
-  border: 1px solid #04bcff;
+  border: 1px solid #b5daf7;
 }
 .items-body {
   padding: 10px;
@@ -316,12 +332,12 @@
 }
 .items-body-content:hover {
   border-radius: 15px;
-  border: 1px solid #04bcff;
+  border: 1px solid#b5daf7;
 }
 .items-body-content i {
   align-self: center;
   font-size: 15px;
-  color: #04bcff;
+  color: #b5daf7;
   font-weight: bold;
   animation: icon 1.5s infinite forwards;
 }

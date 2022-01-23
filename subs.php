@@ -59,8 +59,8 @@
             </ol>
           </div>
         </div>
-        <button class="btn-beli" href="#">
-          BELI
+        <button class="btn-beli">
+          <a href="pembayaran-basic.php">BELI</a>
         </button>
       </div>
       <!-- STANDARD SUBSCRIPTION -->
@@ -87,8 +87,8 @@
             </ol>
           </div>
         </div>
-        <button class="btn-beli" href="#">
-          BELI
+        <button class="btn-beli">
+          <a href="">BELI</a>
         </button>
       </div>
       <!-- PREMIUM SUBSCRIPTION -->
@@ -115,8 +115,8 @@
             </ol>
           </div>
         </div>
-        <button class="btn-beli" href="#">
-          BELI
+        <button class="btn-beli">
+          <a href="">BELI</a>
         </button>
       </div>
     </div>
