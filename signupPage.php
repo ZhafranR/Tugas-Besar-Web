@@ -84,7 +84,7 @@ if (isset($_POST["submit"])) {
 
             <div class="changeOption">
                 <p id="question">Already have an Account?</p>
-                <a href="login.html">Log In</a>
+                <a href="login.php">Log In</a>
             </div>
         </div>
     </div>
