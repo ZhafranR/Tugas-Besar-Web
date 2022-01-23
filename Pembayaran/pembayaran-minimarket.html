@@ -2,33 +2,18 @@
 <html lang="en">
 <head>
     <style>
-        body {
+       body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     background: #333;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;   
     font-family: sans-serif;
     background-color: #b5daf7; 
 }
-
-/* .container-box {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "Grid-1"
-    "Grid-2";
-}
-
-.Grid-1 { grid-area: Grid-1; }
-
-.Grid-2 { grid-area: Grid-2; } */
-
 
 .container {
     width: 1000px;
@@ -168,7 +153,7 @@ i {
     color: #414141;
 }
 
-.button {
+.button{
   background-color: #ff7048;
   border: 1px solid #ff7048;
   border-radius: 8px;
@@ -195,13 +180,28 @@ i {
 }
 
 .button:hover {
-  background-color: #ff7048;
+  background-color: #f19379;
 }
 
 .button:focus {
   border-color: #b5daf7;
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   outline: 2;
+}
+.button a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.header img {
+  width: 204px;
+  height: 45px;
 }
     </style>
     <meta charset="UTF-8">
@@ -210,6 +210,9 @@ i {
 </head>
 
 <body>
+    <div class="header">
+        <img src="logo.png" alt="">
+    </div>
     <div class="container">
         <div class="card">
             <div class="face face1">
@@ -269,10 +272,17 @@ i {
                     <p>>>> ABCDXX123456 <<<</p>
                     <p>Bayar Sebelum: 06/01/2022 23.61</p>
                     <br><br>
-                    <button class='button' role="button">Selesai</button>
+                    <button class="button" id="kembaliBtn">
+                        <a href="pembayaran-basic.php">Kembali</a>
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
+    <div style="display: flex;">
+        <button class="button" id="selesaiBtn" >
+            <a href="../afterLogin.php">Selesai</a>
+        </button>
     </div>
 </body>
 

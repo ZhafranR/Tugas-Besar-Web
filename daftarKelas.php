@@ -1,7 +1,6 @@
 <?php
 require "func_signup.php";
 $kelas = query("SELECT * FROM kelas");
-
 ?>
 
 <!DOCTYPE html>
@@ -71,6 +70,7 @@ $kelas = query("SELECT * FROM kelas");
         </div>
       </div>
       <div class="row responsive-card  justify-content-center">
+<<<<<<< HEAD
         <div class=" mx-auto mb-5">
           <div class="card custom-card" style="width: 24rem">
             <img src="assets/img/ui_ux.jpg" class="card-img-top" alt="" />
@@ -125,6 +125,24 @@ $kelas = query("SELECT * FROM kelas");
             </div>
           </div>
         </div>
+=======
+        <?php foreach ($kelas as $row) : ?>
+          <?php
+          $namaKelas = $row["namaKelas"];
+          $foto = $row["fotoKelas"];
+          ?>
+          <div class=" mx-auto mb-5">
+            <div class="card custom-card" style="width: 24rem">
+              <img src=<?php echo $foto; ?> class="card-img-top" id="class1" alt="" />
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $namaKelas; ?></h5>
+                <a href="#" class="btn btn-primary custom-button my-2">Ikuti Kelas</a>
+              </div>
+            </div>
+          </div>
+        <?php endforeach; ?>
+
+>>>>>>> bebb4a1c9b0621a6db0136cd195019e93bdc47f3
       </div>
     </div>
   </section>
