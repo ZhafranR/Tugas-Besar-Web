@@ -45,9 +45,9 @@
       <div class="home">
         <div class="headerTxt">
           <h1>
-            Welcome!
+            Mau belajar
+            apa hari ini?
           </h1>
-          <p>Mau belajar apa hari ini?</p>
           <a href="daftarKelas.php" id="buttonSubs">MULAI BELAJAR</a>
         </div>
         <div class="hero">

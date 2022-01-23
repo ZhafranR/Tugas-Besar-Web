@@ -116,7 +116,7 @@
           </div>
         </div>
         <button class="btn-beli" href="#">
-          <a href="pembayaran-premium.php">BELI BANG</a>
+          <a href="pembayaran-premium.php">BELI</a>
         </button>
       </div>
     </div>

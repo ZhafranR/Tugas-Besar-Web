@@ -14,6 +14,7 @@
 
 .header {
   display: flex;
+  justify-content: space-between;
 }
 
 .logo img {
@@ -23,7 +24,6 @@
 
 .header .navigation {
   float: right;
-  margin-left: 465px;
   margin-top: 20px;
 }
 
@@ -63,22 +63,19 @@
 
 .home {
   display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .hero img {
   float: right;
-  margin-left: 200px;
 }
 
-.headerTxt {
+.headerTxt{
   margin-left: 80px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
-.headerTxt h1 {
-  font-size: 50px;
-  font-weight: bold;
-}
 
 .parent {
   background-color: #b5daf7;
