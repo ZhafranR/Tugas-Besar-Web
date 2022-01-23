@@ -442,7 +442,7 @@
           </div>
           <div class="form-left">
             <h3 class="form-text">Email Pengguna</h3>
-            <p class="f-email" id='email-form' onclick='getCookie()' name="email"></p>
+            <p class="f-email" id='email-form' onload='getCookie()' name="email"></p>
             <h3 class="form-text">Nama Paket</h3>
             <p class="f-paket">Paket Basic</p>
             <h3 class="form-text">Harga Paket</h3>
@@ -489,9 +489,10 @@
 
     function getCookie(){
       var session = document.cookie;
-      const email = session.split('-')[0].split('=')[1];
-      const password = session.split('-')[1].split('=')[1];
-      console.log(email);
+      const email = session.split('-')[0];
+      const password = session.split('-')[1];
+    
+      console.log(session.split(';'));
       // document.getElementById('email-form').innerHTML.onload = function() {
       //   'Tes'
       // }

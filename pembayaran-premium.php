@@ -468,8 +468,8 @@
 
         function getCookie(){
           var session = document.cookie;
-          const email = session.split('-')[0].split('=')[1];
-          const password = session.split('-')[1].split('=')[1];
+          const email = session.split('-')[0];
+          const password = session.split('-')[1];
           console.log(email);
           // document.getElementById('email-form').innerHTML.onload = function() {
           //   'Tes'
