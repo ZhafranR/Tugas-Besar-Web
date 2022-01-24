@@ -1,26 +1,3 @@
-<?php
-    $conn = mysqli_connect("localhost", "root", "", "db-zenius");
-    function query($query)
-    {
-        global $conn;
-        $result = mysqli_query($conn, $query);
-        $rows = [];
-        while ($row = mysqli_fetch_assoc($result)) {
-            $rows[] = $row;
-        }
-        return $rows;
-    };
-
-    # Manipulasi Tanggal
-      function manipulasiTanggal($tgl,$jumlah=1,$format='months'){
-        $currentDate = new DateTime($tgl);
-          $currentDate -> modify($jumlah.' '.$format);
-          return $currentDate -> format('Y/m/d');
-      }
-
-    $user = query("SELECT email FROM user");
-    $jenislangganan = query("SELECT *FROM jenisLangganan WHERE jenis='Standard'");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -242,8 +219,19 @@
       color: white;
       font-weight: bold;
       grid-area: btn;
-      margin-left: 250px;
-      margin-right: 110px;
+    }
+
+    .optionBtn {
+      display: flex;
+      margin-left: 10px;
+    }
+
+    .backBtn button {
+      margin-left: 550px;
+    }
+
+    .payBtn button {
+      margin-left: 10px;
     }
 
     /*the container must be positioned relative:*/
@@ -467,45 +455,32 @@
           <div class="form-left">
             <h3 class="form-text">Email Pengguna</h3>
             <p class="f-email" id='email-form' onclick='getCookie()' name="email"></p>
-             <!-- Nama Paket -->
-             <h3 class="form-text">Nama Paket</h3>
-            <?php foreach ($jenislangganan as $row) : ?>
-                  <?php $jenis = $row["jenis"];
-                  ?>
-            <?php endforeach; ?>   
-            <p class="f-paket" name="paket" ><?php 
-            if ($jenis=="Standard"){
-              $jenisbasic = $jenis;
-            }
-            echo $jenisbasic;?></p>
-            <!-- Harga Paket -->
+            <h3 class="form-text">Nama Paket</h3>
+            <p class="f-paket">Paket Standard</p>
             <h3 class="form-text">Harga Paket</h3>
-            <?php foreach ($jenislangganan as $row) : ?>
-                  <?php $harga = $row["harga"];
-                  ?>
-            <?php endforeach; ?>   
-            <p class="f-harga" name= "harga">Rp <?php 
-            if ($jenis=="Standard"){
-              $hargabasic = $harga;
-            } echo $hargabasic;?>,-</p>
-         </div>
-          <div class="form-right">
-          <!-- Tanggal Mulai -->
-          <h3 class="form-text">Tanggal Mulai</h3>
-          <p class="f-datemulai" name="datestart"><?php
-          $dateawal = date('Y/m/d'); 
-          echo $dateawal?></p>
-          <!-- Tanggal Selesai -->
-          <h3 class="form-text">Tanggal Selesai</h3>  
-          <p class="f-dateakhir" name="dateend"><?php
-            $tgl =  date('Y/m/d');
-            $dateselesai = manipulasiTanggal($tgl,'6','months');
-            echo $dateselesai;?></p>
+            <p class="f-harga">Rp 800.000,-</p>
+
           </div>
+          <div class="form-right">
+            <h3 class="form-text">Tanggal Mulai</h3>
+            <p class="f-datemulai" name="datestart">05/01/2022</p>
+            <h3 class="form-text">Tanggal Selesai</h3>
+            <p class="f-dateakhir" name="dateend">05/04/2022</p>
+          </div>
+        </div>
+        <div class="optionBtn">
+          <div class="backBtn">
             <button class="button">
-                <a href="" id='bayar' onclick='pembayaran()'>Bayar</a>
-            </button>  
-         </div>
+              <a href="subs.php" id='kembali'>Kembali ke Subscription</a>
+            </button>
+          </div>
+          <div class="payBtn">
+            <button class="button">
+              <a href="" id='bayar' onclick='pembayaran()'>Bayar</a>
+            </button>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -520,29 +495,20 @@
       }
     }
 
-    function pembayaran(){
-          var opsi_pembayaran = document.getElementById('option-pembayaran').value;
-          console.log(opsi_pembayaran);
-          <?php
-          $jenisbasic = 'Standard';
-          $dateawal =  date('Y/m/d');
-          $dateselesai = manipulasiTanggal($dateawal,'6','months');
-  
-          $query = "INSERT INTO subscription VALUES (' ','$jenisbasic', '$dateawal', '$dateselesai', '$dateawal')";
-  
-          mysqli_query($conn, $query);
-  
-          ?>
-          if(opsi_pembayaran=='VA'){
-            document.getElementById('bayar').href='Pembayaran/pembayaran-credit-card.html';
-          } else if(opsi_pembayaran=='OVO'){
-            document.getElementById('bayar').href='Pembayaran/pembayaran-ovo.html';
-          } else{
-            document.getElementById('bayar').href='Pembayaran/pembayaran-minimarket.html';
-          }
+    function pembayaran() {
+      var opsi_pembayaran = document.getElementById('option-pembayaran').value;
+      console.log(opsi_pembayaran);
+
+      if (opsi_pembayaran == 'VA') {
+        document.getElementById('bayar').href = 'Pembayaran/pembayaran-credit-card.html';
+      } else if (opsi_pembayaran == 'OVO') {
+        document.getElementById('bayar').href = 'Pembayaran/pembayaran-ovo.html';
+      } else {
+        document.getElementById('bayar').href = 'Pembayaran/pembayaran-minimarket.html';
+      }
     }
 
-    function getCookie(){
+    function getCookie() {
       var session = document.cookie;
       const email = session.split('-')[0];
       const password = session.split('-')[1];
