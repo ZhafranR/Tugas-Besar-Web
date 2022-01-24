@@ -424,9 +424,9 @@
                         <h3 class="form-text">Email Pengguna</h3>
                         <p class="f-email" id='email-form' onclick='getCookie()' name="email"></p>
                         <h3 class="form-text">Nama Paket</h3>
-                        <p class="f-paket" >Paket Basic</p>
+                        <p class="f-paket" >Paket Premium</p>
                         <h3 class="form-text">Harga Paket</h3>
-                        <p class="f-harga">Rp 500.000,-</p>
+                        <p class="f-harga">Rp 1,000.000,-</p>
                         
                       </div>
                       <div class="form-right">

@@ -274,7 +274,7 @@ i {
     <div style="display: flex;">
         <div>
             <button class="button" id="kembaliBtn">
-                <a href="../pembayaran-basic.php">Kembali</a>
+                <a id='kembali' href="#">Kembali</a>
             </button>
         </div>
         <div>
@@ -285,7 +285,7 @@ i {
     </div>
 
     <script>
-        function getCookie(){
+            function getCookie(){
             var session = document.cookie;
             email = session.split('-')[0];
             password = session.split('-')[1];
@@ -293,6 +293,15 @@ i {
 
             console.log(session);
             var total_harga = document.getElementById('total-harga').innerHTML = harga;
+            var return_page = document.getElementById('kembali');
+            
+            if(harga=='Rp 500,000'){
+                return_page.href = '../pembayaran-basic.php';
+            } else if(harga=='Rp 800,000'){
+                return_page.href = '../pembayaran-standard.php'
+            } else{
+                return_page.href = '../pembayaran-premium.php'
+            }
         }
         getCookie();
     </script>
