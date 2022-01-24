@@ -249,7 +249,7 @@ i {
                         <p>Total Pembayaran</p>
                     </h3>
                     <br>
-                    <p>Rp 1,000,000</p>
+                    <p id='total-harga' onclick='getCookie()'>Rp 1,000,000</p>
                 </div>
             </div>
         </div>
@@ -286,6 +286,19 @@ i {
             </button>
         </div>
     </div>
+    
+    <script>
+        function getCookie(){
+            var session = document.cookie;
+            email = session.split('-')[0];
+            password = session.split('-')[1];
+            harga = session.split('-')[2];
+
+            console.log(session);
+            var total_harga = document.getElementById('total-harga').innerHTML = harga;
+        }
+        getCookie();
+    </script>
 </body>
 
 </html>

@@ -496,6 +496,7 @@
       //   'Tes'
       // }
 
+      document.cookie = `${email}-${password}-${'Rp 800,000'}`;
       var email_form = document.getElementById('email-form').innerHTML = email;
     }
     getCookie();
