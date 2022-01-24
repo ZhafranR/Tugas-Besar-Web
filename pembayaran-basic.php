@@ -1,3 +1,27 @@
+<?php
+$conn = mysqli_connect("localhost", "root", "", "db-zenius");
+function query($query)
+{
+  global $conn;
+  $result = mysqli_query($conn, $query);
+  $rows = [];
+  while ($row = mysqli_fetch_assoc($result)) {
+    $rows[] = $row;
+  }
+  return $rows;
+};
+
+# Manipulasi Tanggal
+function manipulasiTanggal($tgl, $jumlah = 1, $format = 'months')
+{
+  $currentDate = new DateTime($tgl);
+  $currentDate->modify($jumlah . ' ' . $format);
+  return $currentDate->format('Y/m/d');
+}
+
+$user = query("SELECT email FROM user");
+$jenislangganan = query("SELECT *FROM jenisLangganan WHERE jenis='Basic'");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -234,7 +258,6 @@
       margin-left: 10px;
     }
 
-
     /*the container must be positioned relative:*/
     .custom-select {
       position: relative;
@@ -361,7 +384,7 @@
 
             <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
             <div class="custom-select" style="width:200px;">
-              <select id='option-pembayaran'>
+              <select id='option-pembayaran' name="category">
                 <option value="0">Pilih:</option>
                 <option value="VA">Virtual Account</option>
                 <option value="OVO">Ovo</option>
@@ -455,17 +478,41 @@
           <div class="form-left">
             <h3 class="form-text">Email Pengguna</h3>
             <p class="f-email" id='email-form' onload='getCookie()' name="email"></p>
+            <!-- Nama Paket -->
             <h3 class="form-text">Nama Paket</h3>
-            <p class="f-paket">Paket Basic</p>
+            <?php foreach ($jenislangganan as $row) : ?>
+              <?php $jenis = $row["jenis"];
+              ?>
+            <?php endforeach; ?>
+            <p class="f-paket" name="paket"><?php
+                                            if ($jenis == "Basic") {
+                                              $jenisbasic = $jenis;
+                                            }
+                                            echo $jenisbasic; ?></p>
+            <!-- Harga Paket -->
             <h3 class="form-text">Harga Paket</h3>
-            <p class="f-harga">Rp 500.000,-</p>
-
+            <?php foreach ($jenislangganan as $row) : ?>
+              <?php $harga = $row["harga"];
+              ?>
+            <?php endforeach; ?>
+            <p class="f-harga" name="harga">Rp <?php
+                                                if ($jenis == "Basic") {
+                                                  $hargabasic = $harga;
+                                                }
+                                                echo $hargabasic; ?>,-</p>
           </div>
           <div class="form-right">
+            <!-- Tanggal Mulai -->
             <h3 class="form-text">Tanggal Mulai</h3>
-            <p class="f-datemulai" name="datestart">05/01/2022</p>
+            <p class="f-datemulai" name="datestart"><?php
+                                                    $dateawal = date('Y/m/d');
+                                                    echo $dateawal ?></p>
+            <!-- Tanggal Selesai -->
             <h3 class="form-text">Tanggal Selesai</h3>
-            <p class="f-dateakhir" name="dateend">05/04/2022</p>
+            <p class="f-dateakhir" name="dateend"><?php
+                                                  $tgl =  date('Y/m/d');
+                                                  $dateselesai = manipulasiTanggal($tgl, '3', 'months');
+                                                  echo $dateselesai; ?></p>
           </div>
           <a href="redirect"></a>
         </div>
@@ -499,7 +546,16 @@
     function pembayaran() {
       var opsi_pembayaran = document.getElementById('option-pembayaran').value;
       console.log(opsi_pembayaran);
+      <?php
+      $jenisbasic = 'Basic';
+      $dateawal =  date('Y/m/d');
+      $dateselesai = manipulasiTanggal($dateawal, '3', 'months');
 
+      $query = "INSERT INTO subscription VALUES (' ','$jenisbasic', '$dateawal', '$dateselesai', '$dateawal')";
+
+      mysqli_query($conn, $query);
+
+      ?>
       if (opsi_pembayaran == 'VA') {
         document.getElementById('bayar').href = 'Pembayaran/pembayaran-credit-card.html';
       } else if (opsi_pembayaran == 'OVO') {
