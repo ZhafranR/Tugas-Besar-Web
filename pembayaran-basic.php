@@ -523,6 +523,16 @@
     function pembayaran(){
       var opsi_pembayaran = document.getElementById('option-pembayaran').value;
       console.log(opsi_pembayaran);
+      <?php
+          $jenisbasic = 'Basic';
+          $dateawal =  date('Y/m/d');
+          $dateselesai = manipulasiTanggal($dateawal,'3','months');
+  
+          $query = "INSERT INTO subscription VALUES (' ','$jenisbasic', '$dateawal', '$dateselesai', '$dateawal')";
+  
+          mysqli_query($conn, $query);
+  
+      ?>
       if(opsi_pembayaran=='VA'){
         document.getElementById('bayar').href='Pembayaran/pembayaran-credit-card.html';
       } else if(opsi_pembayaran=='OVO'){
@@ -536,16 +546,7 @@
       var session = document.cookie;
       const email = session.split('-')[0];
       const password = session.split('-')[1];
-      <?php
-          $jenisbasic = 'Basic';
-          $dateawal =  date('Y/m/d');
-          $dateselesai = manipulasiTanggal($dateawal,'3','months');
-  
-          $query = "INSERT INTO subscription VALUES (' ','$jenisbasic', '$dateawal', '$dateselesai', '$dateawal')";
-  
-          mysqli_query($conn, $query);
-  
-      ?>
+      
       console.log(session.split(';'));
       // document.getElementById('email-form').innerHTML.onload = function() {
       //   'Tes'
